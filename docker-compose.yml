@@ -1,0 +1,12 @@
+version: "3.4"
+
+services:
+  poste:
+    image: analogic/poste.io
+    restar: always
+    network_mode: "host"
+    volume:
+      - /root/mail-data/:/data
+    environment:
+      - HTTPS:ON
+
