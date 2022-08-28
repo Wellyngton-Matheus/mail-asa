@@ -69,6 +69,7 @@ services:
     ports:
       - "25:25/tcp"
       - "587:587/tcp"
+      - "143:143/tcp"
     networks:
       - asa-network
 

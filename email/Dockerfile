@@ -1,12 +1,16 @@
 FROM ubuntu:20.04
 
-RUN apt update
+# Atualizando repositorio e realizando o upgrade dos pacotes
+RUN apt update \
+     && apt upgrade -y 
 
-RUN apt upgrade -y
-
+#Instalação do postfix e dovecote, além de alguns utilitários
 RUN apt install postfix dovecot-core dovecot-imapd vim dnsutils iputils-ping -y
 
-COPY postfix/main.cf /etc/postfix
-
-
+#Copiando os arquivos configurados para as aplicações subirem
+COPY postfix/main.cf /etc/postfix/main.cf
+COPY dovecot/dovecot.conf /etc/dovecot/dovecot.conf
+COPY dovecot/10-auth.conf /etc/dovecot/conf.d/10-auth.conf
+COPY dovecot/10-mail.conf /etc/dovecot/conf.d/10-mail.confnf
+COPY dovecot/10-master.conf /etc/dovecot/conf.d/10-master.conf
 
