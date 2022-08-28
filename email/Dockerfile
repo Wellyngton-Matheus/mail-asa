@@ -4,9 +4,9 @@ RUN apt update
 
 RUN apt upgrade -y
 
-RUN apt install postfix vim dnsutils iputils-ping -y
+RUN apt install postfix dovecot-core dovecot-imapd vim dnsutils iputils-ping -y
 
-COPY main.cf /etc/postfix
+COPY postfix/main.cf /etc/postfix
 
 
 
