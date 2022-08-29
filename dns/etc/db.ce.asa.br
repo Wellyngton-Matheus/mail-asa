@@ -1,4 +1,3 @@
-;
 ; BIND data file for local loopback interface
 ;
 $TTL	604800
@@ -9,13 +8,10 @@ $TTL	604800
 			2419200		; Expire
 			 604800 )	; Negative Cache TTL
 ;
-@	IN  MX 10 mail.ce.asa.br.
+@	IN	NS	ce.asa.br.
 @	IN	NS	ns1.ce.asa.br.
-;@	IN	NS	ns2.ce.asa.br.
-@	IN	A	127.0.0.1
-@	IN	AAAA	::1
+@	IN	MX	10 mail.ce.asa.br.
+@	IN	A	192.168.0.10
 
-ns1			A	192.168.0.10
-mail		A 	192.168.0.10
-
-
+ns1	IN	A	192.168.0.10
+mail	IN	A	192.168.0.10

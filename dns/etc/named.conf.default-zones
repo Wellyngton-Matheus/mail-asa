@@ -1,3 +1,4 @@
+
 //key "example.com" {
 //	algorithm hmac-md5;
 //	secret "BD077oHTdwm6Kwm4pc5tBkrX6EW3RErIOIESKpIKP6vQHAPRYp+9ubig Fvl3gYuuib+DQ8+eCpHEe/rIy9tiIg==";
@@ -17,14 +18,7 @@ zone "localhost" {
 	file "/etc/bind/db.local";
 };
 
-zone "asa.br" { // Change to desired zone
+zone "ce.asa.br" {
 	type master;
-	file "/etc/bind/db.ce.asa.br";	// Change to zone file path
-	allow-transfer {0.0.0.0; };		// Change to Secondary DNS IP
-//	allow-update {
-//          key "example.com";
-//  };
+	file "/etc/bind/db.ce.asa.br";
 };
-
-
-
